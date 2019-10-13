@@ -1,0 +1,37 @@
+version: "3.7"
+
+services:
+  dev-web:
+    container_name: dev-web
+    networks:
+      - web-network
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./web:/usr/src/app/web
+    depends_on:
+      - dev-db
+    links:
+      - dev-db
+    command: ["./run.sh"]
+    ports:
+      - "8000:8000"
+
+  dev-db:
+    container_name: dev-db
+    networks:
+      - web-network
+    image: postgres:10.7
+    restart: always
+    environment:
+      - POSTGRES_USER=django_web
+      - POSTGRES_PASSWORD=django_web
+      - POSTGRES_DB=django_web
+    command: ["--autovacuum=off"]
+    ports:
+      - "5432:5432"
+
+networks:
+  web-network:
