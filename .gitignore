@@ -1,3 +1,11 @@
+.idea/
+*~
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+*.iml
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -51,10 +59,14 @@ coverage.xml
 *.mo
 *.pot
 
-# Django stuff:
+# Django stuff
 *.log
+*.pot
+*.pyc
+__pycache__/
 local_settings.py
 db.sqlite3
+media
 
 # Flask stuff:
 instance/
