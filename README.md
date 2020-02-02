@@ -6,6 +6,13 @@ An example repository of combining Django REST Framework with PostgreSQL, which 
 * Docker 2.0.0.2 or more
 * Docker-compose 1.23.2 or more
 
+## Stack
+
+* Python 3.7
+* Django 2.2.9
+* Django REST Framework 3.10.3
+* psycopg2 2.8.3
+
 ## Simplified development run
 
 To start the Django REST server, use the following command in the project folder:
@@ -21,10 +28,10 @@ Make the follow commands:
 * Remove the `python manage.py runserver 0.0.0.0:8000` in file `run.sh`
 * `Project Structure...` or `Ctrl + Alt + Shift + S` > `Project` > Add new `Python SDK` with the following options:
 
-![New Python SDK](readme_1.png)
+![New Python SDK](readme/readme_1.png)
 
 * Configure the `Run/Debug Configurations` as in the picture below:
 
-![Run/Debug Configurations](readme_2.png)
+![Run/Debug Configurations](readme/readme_2.png)
 
 Now you can run the project in debug mode using the previously created configuration.
