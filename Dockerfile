@@ -11,9 +11,9 @@ WORKDIR ${WORKDIR}
 
 COPY ./${APP_NAME} ./${APP_NAME}
 COPY ./manage.py ./
-COPY ./run.sh ./
+COPY ./entrypoint.sh ./
 
-RUN chmod +x ./run.sh
+RUN chmod +x ./entrypoint.sh
 RUN pip install -r ${REQUIREMENTS}
 
 EXPOSE 8000
