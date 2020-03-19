@@ -15,7 +15,7 @@ services:
       - dev-db
     links:
       - dev-db
-    command: ["./run.sh"]
+    command: ["./entrypoint.sh"]
     ports:
       - "8000:8000"
 
@@ -25,6 +25,8 @@ services:
       - web-network
     image: postgres:10.7
     restart: always
+    volumes:
+      - dev-db-volume:/var/lib/postgresql/data
     environment:
       - POSTGRES_USER=django_web
       - POSTGRES_PASSWORD=django_web
@@ -35,3 +37,7 @@ services:
 
 networks:
   web-network:
+
+volumes:
+  dev-db-volume:
+    external: true
