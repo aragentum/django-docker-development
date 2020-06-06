@@ -17,7 +17,7 @@ services:
       - dev-db
     command: ["./entrypoint.sh"]
     ports:
-      - "8000:8000"
+      - "127.0.0.20:8000:8000"
 
   dev-db:
     container_name: dev-db
@@ -33,7 +33,7 @@ services:
       - POSTGRES_DB=django_web
     command: ["--autovacuum=off"]
     ports:
-      - "5432:5432"
+      - "127.0.0.21:5432:5432"
 
 networks:
   web-network:
