@@ -26,15 +26,15 @@ Create a volume for a database:
 ```
 docker volume create dev-db-volume
 ```
-
+This is necessary to save db container data, otherwise if you do `docker-compose down` you will lose your db data.
 
 ## Run
 
-To start the Django REST server, use the following command in the project folder:
+To run server, use the following command in the project folder:
 ```
 docker-compose up
 ```
-After that app should be up on http://localhost:8000 in development mode (with automatic update).
+After that server should be up on `http://localhost:8000` in development mode (with auto update of changes).
 
 
 ## Run/Debug in Intellij Idea or PyCharm
@@ -59,7 +59,7 @@ Now you can run the project in debug mode using the previously created configura
 
 ## Code style
 
-To reformat all code in the project run the follow command:
+To reformat all code in the project (except `web/settings`) run the follow command:
 ```
 black web --exclude web/settings
 ```
