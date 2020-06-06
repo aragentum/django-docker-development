@@ -1,8 +1,0 @@
-Django==2.2.13
-djangorestframework==3.10.3
-pytz==2019.3
-psycopg2-binary==2.8.5
-
-pytest==5.4.3
-pytest-django==3.9.0
-black==19.10b0
